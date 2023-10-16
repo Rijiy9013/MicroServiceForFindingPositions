@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\SearchQuery;
+use http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class FindPositions extends BaseController
 {
+    public function check()
+    {
+        dd(123);
+    }
+
     /**
      * Создаем поиск
      * @param Request $request :
@@ -64,7 +70,7 @@ class FindPositions extends BaseController
      * @return json:
      *  - 'ans' (array): ответ
      */
-    public function deactivateQuery(Request $request)
+    public function deactivateQuery(Request $request): Response
     {
         try {
             if ($request->id) {

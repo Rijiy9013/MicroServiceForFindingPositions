@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FindPositions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::post('/createSearchQuery', [FindPositions::class, 'createSearchQuery'])->name('createSearchQuery');
+
+Route::post('/getSearchQueries', [FindPositions::class, 'getSearchQueries'])->name('getSearchQueries');
+
+Route::post('/deactivateQuery', [FindPositions::class, 'deactivateQuery'])->name('deactivateQuery');

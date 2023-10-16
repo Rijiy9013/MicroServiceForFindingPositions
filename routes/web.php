@@ -14,12 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', [FindPositions::class, 'index'])->name('index');
-
-Route::post('/createSearchQuery', [FindPositions::class, 'createSearchQuery'])->name('createSearchQuery');
-
-Route::post('/getSearchQueries', [FindPositions::class, 'getSearchQueries'])->name('getSearchQueries');
-
-Route::post('/deactivateQuery', [FindPositions::class, 'deactivateQuery'])->name('deactivateQuery');
-
+Route::get('/', [FindPositions::class, 'check'])->name('index');
